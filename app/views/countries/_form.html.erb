@@ -3,11 +3,10 @@
     <%= form_for @country do |c| %>
     <div class="form-group">
         <%= c.text_field :name, placeholder: "name" %>
-        <%= c.text_field :flag, placeholder: "flag" %>
         <%= c.text_field :capital, placeholder: "capital" %>
         <%= c.text_field :language, placeholder: "language" %>
-        <%= c.number_field :area, placeholder: "area" %>
-        <%= c.number_field :population, placeholder: "population" %>
+        <%= c.text_field :area, placeholder: "area" %>
+        <%= c.text_field :population, placeholder: "population" %>
         <span class="btn btn-default">
             Upload Photo
             <%= file_field_tag "images[]", type: :file, multiple: true %>
