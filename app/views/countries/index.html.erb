@@ -1,6 +1,8 @@
 <h1>Countries</h1>
 
-<% @country.each do |count| %>
+<% @countries.each do |count| %>
   <p><%= count.name %></p>
-  <%= count.flag %>
+<div><%= image_tag count.flag %></div>
 <% end %>
+
+<%= render 'form' %>
