@@ -1,8 +1,12 @@
-<h1>Countries</h1>
-
-<% @countries.each do |country| %>
-<p><%= link_to country.name, country_path(country.id) %></p>
-<div><%= image_tag country.flag %></div>
-<% end %>
-
-<%= render 'form' %>
+<div class="container">
+    <h1>Countries</h1>
+    <div class="row">
+        <% @countries.each do |country| %>
+        <div class="col-md-3">
+            <p><%= link_to country.name, country_path(country.id) %></p>
+            <div><%= image_tag country.flag, class: "img-thumbnail img-responsive index_img" %></div>
+        </div>
+        <% end %>
+    </div>
+    <%= render 'form' %>
+</div>

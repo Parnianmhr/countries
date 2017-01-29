@@ -1,0 +1,14 @@
+<div class="container conWidth">
+    <%= form_for [@country, @country.cities.new] do |c| %>
+    <div class="form-group">
+        <%= c.text_field :name, placeholder: "name" %>
+        <%= c.text_field :population, placeholder: "population" %>
+        <span class="btn btn-default">
+            Upload Photo
+            <%= file_field_tag "images[]", type: :file, multiple: true %>
+        </span>
+    </div>
+    <br>
+    <%= c.submit "Add", class: "btn btn-success"%>
+    <% end %>
+</div>

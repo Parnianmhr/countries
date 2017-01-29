@@ -10,7 +10,12 @@ class CountriesController < ApplicationController
 
     def create
         @country = Country.new(country_params)
-        @country.save
+        if @country.save
+            redirect_to root_path
+        else
+            @country = Country.all
+            render :index
+        end
     end
 
     def destroy

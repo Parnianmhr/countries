@@ -1,12 +1,15 @@
 class CitiesController < ApplicationController
+    def index
+        @country = Country.find[params(:country_id)]
+    end
+
     def new
-        @city = City.new
+        @country = Country.find[params(city_params)]
     end
 
     def create
-        @country = Country.find(params[:country_id])
-        @city = City.new(city_params)
-        @city.country = @country
+        country = Country.find(params[:country_id])
+        @city = country.cities.new(params[city_params])
 
         if @city.save
             redirect_to @country, notice: 'city successfully created'
@@ -16,7 +19,8 @@ class CitiesController < ApplicationController
     end
 
     def destroy
-        @city = City.find(params[:id])
+        country = Country.find(params[:country_id])
+        @city = country.cities.find(params[:id])
         @city.destroy
 
         if @city.destroy
