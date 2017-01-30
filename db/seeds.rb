@@ -11,8 +11,8 @@ country5  = Country.create( { name: "Sweden",      flag: "http://bit.ly/2jiBjS6"
 
 city1 = City.create({ name: "Amsterdam", photo: "http://bit.ly/1FQUUhX", population: 1000700 } )
 city2 = City.create({ name: "Rotterdam", photo: "http://bit.ly/2jAA3Z0", population: 1100700 } )
-city3 = City.create({ name: "Amsterdam", photo: "http://bit.ly/1FQUUhX", population: 1000700 } )
-city4 = City.create({ name: "Rotterdam", photo: "http://bit.ly/2jAA3Z0", population: 1100700 } )
+city3 = City.create({ name: "Tehran", photo: "http://bit.ly/2kgtPhr", population: 1000700 } )
+city4 = City.create({ name: "Shiraz", photo: "http://bit.ly/2kgzFiO", population: 1100700 } )
 
 country1.cities << [city1, city2]
 country1.save

@@ -8,6 +8,10 @@ class CountriesController < ApplicationController
         @country = Country.find(params[:id])
     end
 
+    def new
+        @country = Country.new
+    end
+
     def create
         @country = Country.new(country_params)
         if @country.save
